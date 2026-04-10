@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Idea-to-App Agent</title>
+    <meta
+      name="description"
+      content="Turn a rough app idea into an MVP plan, tech stack, launch checklist, and landing page copy."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="background-orb orb-one"></div>
+      <div class="background-orb orb-two"></div>
+
+      <main class="app-card">
+        <section class="hero">
+          <p class="eyebrow">Launch faster</p>
+          <h1>Idea-to-App Agent</h1>
+          <p class="hero-copy">
+            Drop in a rough product idea and get back a sharper concept, MVP
+            scope, recommended stack, build roadmap, and launch-ready homepage
+            messaging.
+          </p>
+        </section>
+
+        <section class="workspace">
+          <form id="idea-form" class="input-panel">
+            <label class="input-label" for="idea-input">Your rough idea</label>
+            <textarea
+              id="idea-input"
+              name="idea"
+              rows="12"
+              placeholder="Example: I want to build an app for college students to split rent, manage utilities, and avoid awkward roommate arguments."
+              required
+            ></textarea>
+
+            <div class="prompt-suggestions">
+              <button type="button" class="pill-button" data-prompt="A mobile app that helps busy parents plan kid-friendly meals for the week and automatically generate a grocery list.">
+                Meal planner
+              </button>
+              <button type="button" class="pill-button" data-prompt="A tool for gym beginners that creates simple workout plans based on available equipment and time.">
+                Workout planner
+              </button>
+              <button type="button" class="pill-button" data-prompt="A platform that helps freelancers turn client notes into polished proposals and project scopes.">
+                Freelancer proposals
+              </button>
+            </div>
+
+            <button id="submit-button" class="primary-button" type="submit">
+              Generate app plan
+            </button>
+            <p class="form-note">
+              Tip: the messier your first draft, the more helpful this feels.
+            </p>
+          </form>
+
+          <section class="results-panel" aria-live="polite">
+            <div id="empty-state" class="empty-state">
+              <p class="empty-title">Your app blueprint will show up here.</p>
+              <p class="empty-copy">
+                You’ll get a focused MVP, a build plan, and headline ideas you
+                can actually use.
+              </p>
+            </div>
+
+            <div id="loading-state" class="loading-state hidden">
+              <div class="loading-ripple"></div>
+              <p>Thinking through your idea...</p>
+            </div>
+
+            <div id="error-state" class="error-state hidden"></div>
+
+            <div id="results" class="results hidden">
+              <section class="result-block">
+                <p class="result-label">Refined idea</p>
+                <h2 id="product-summary"></h2>
+              </section>
+
+              <section class="grid two-up">
+                <article class="result-card">
+                  <p class="result-label">Target user</p>
+                  <p id="target-user"></p>
+                </article>
+                <article class="result-card">
+                  <p class="result-label">Why now</p>
+                  <p id="why-now"></p>
+                </article>
+              </section>
+
+              <section class="result-card">
+                <p class="result-label">MVP features</p>
+                <ul id="mvp-features" class="result-list"></ul>
+              </section>
+
+              <section class="grid two-up">
+                <article class="result-card">
+                  <p class="result-label">Recommended stack</p>
+                  <ul id="tech-stack" class="result-list"></ul>
+                </article>
+                <article class="result-card">
+                  <p class="result-label">Build in 7 days</p>
+                  <ul id="build-plan" class="result-list"></ul>
+                </article>
+              </section>
+
+              <section class="grid two-up">
+                <article class="result-card">
+                  <p class="result-label">Landing page headline</p>
+                  <p id="headline"></p>
+                </article>
+                <article class="result-card">
+                  <p class="result-label">Call to action</p>
+                  <p id="cta"></p>
+                </article>
+              </section>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
