@@ -75,8 +75,7 @@ Deployment steps:
 │   ├── app.js
 │   ├── index.html
 │   └── styles.css
-├── scripts/
-│   └── dev-server.mjs
+├── server.js
 ├── package.json
 └── vercel.json
 ```
