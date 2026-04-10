@@ -71,10 +71,12 @@ Deployment steps:
 │   ├── DEPLOY.md
 │   ├── SETUP.md
 │   └── SHOWCASE.md
-├── app.js
-├── index.html
-├── server.js
-├── styles.css
+├── public/
+│   ├── app.js
+│   ├── index.html
+│   └── styles.css
+├── scripts/
+│   └── dev-server.mjs
 ├── package.json
 └── vercel.json
 ```
