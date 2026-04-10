@@ -12,10 +12,6 @@ const port = Number(process.env.PORT) || 3000;
 
 loadEnvFile();
 
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
-
 const contentTypes = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
@@ -113,6 +109,10 @@ async function handleGenerate(request, response) {
   }
 
   try {
+    const client = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY
+    });
+
     const aiResponse = await client.responses.create({
       model: "gpt-5.2",
       input: [
