@@ -1,0 +1,16 @@
+{
+  "name": "idea-to-app-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "openai": "^5.0.0"
+  },
+  "devDependencies": {
+    "vercel": "^39.1.0"
+  }
+}
