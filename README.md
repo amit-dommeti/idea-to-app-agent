@@ -21,7 +21,7 @@ What it generates:
 
 Add these once you publish:
 
-- Live app: `coming soon`
+- Live app: [idea-to-app-agent.vercel.app](https://idea-to-app-agent.vercel.app)
 - Demo video: `coming soon`
 - Screenshot: add `/docs/screenshot.png`
 
